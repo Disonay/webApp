@@ -1,6 +1,6 @@
 <%@ page import="java.net.Socket" %>
 <%@ page import="java.io.*" %>
-<%@page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8"%>
+<%@page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8" %>
 <%
     try (Socket socket = new Socket("info.cern.ch", 80)) {
         System.out.println("----------------------------------------------------------------------------------");
@@ -33,6 +33,10 @@
     <meta charset="UTF-8">
 </head>
 <body>
-<h2>Hello, Сергей</h2>
+<h1>Name: </h1>
+<form method="post" action="hello">
+    <input type="text" name="name">
+    <input type="submit" value="Enter">
+</form>
 </body>
 </html>

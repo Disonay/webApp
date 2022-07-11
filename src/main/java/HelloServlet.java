@@ -17,4 +17,12 @@ public class HelloServlet extends HttpServlet {
             pw.write("<h1>Hello, Сергей<h1>");
         }
     }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+        resp.setContentType("text/html");
+        try (PrintWriter pw = resp.getWriter()) {
+            pw.write("<h1>Hello, " + req.getParameter("name") + "<h1>");
+        }
+    }
 }
