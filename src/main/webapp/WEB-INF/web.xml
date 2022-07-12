@@ -4,13 +4,56 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+
   <servlet>
     <servlet-name>HelloServlet</servlet-name>
     <servlet-class>HelloServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>NameServlet</servlet-name>
+    <servlet-class>NameServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>SurnameServlet</servlet-name>
+    <servlet-class>SurnameServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>MiddleNameServlet</servlet-name>
+    <servlet-class>MiddleNameServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>HelloFio</servlet-name>
+    <jsp-file>/helloFioJsp.jsp</jsp-file>
   </servlet>
 
   <servlet-mapping>
     <servlet-name>HelloServlet</servlet-name>
     <url-pattern>/hello</url-pattern>
   </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>NameServlet</servlet-name>
+    <url-pattern>/name</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>SurnameServlet</servlet-name>
+    <url-pattern>/surname</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>MiddleNameServlet</servlet-name>
+    <url-pattern>/middle-name</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>HelloFio</servlet-name>
+    <url-pattern>/hello-fio</url-pattern>
+  </servlet-mapping>
+
+
 </web-app>
