@@ -7,22 +7,22 @@
 
   <servlet>
     <servlet-name>HelloServlet</servlet-name>
-    <servlet-class>HelloServlet</servlet-class>
+    <servlet-class>servlets.HelloServlet</servlet-class>
   </servlet>
 
   <servlet>
     <servlet-name>NameServlet</servlet-name>
-    <servlet-class>NameServlet</servlet-class>
+    <servlet-class>servlets.NameServlet</servlet-class>
   </servlet>
 
   <servlet>
     <servlet-name>SurnameServlet</servlet-name>
-    <servlet-class>SurnameServlet</servlet-class>
+    <servlet-class>servlets.SurnameServlet</servlet-class>
   </servlet>
 
   <servlet>
     <servlet-name>MiddleNameServlet</servlet-name>
-    <servlet-class>MiddleNameServlet</servlet-class>
+    <servlet-class>servlets.MiddleNameServlet</servlet-class>
   </servlet>
 
   <servlet>

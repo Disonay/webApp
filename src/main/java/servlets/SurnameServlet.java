@@ -1,5 +1,5 @@
-import jakarta.servlet.RequestDispatcher;
-import jakarta.servlet.Servlet;
+package servlets;
+
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -8,11 +8,11 @@ import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 
-public class NameServlet extends HttpServlet {
+public class SurnameServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession();
-        session.setAttribute("name", req.getParameter("name"));
-        resp.sendRedirect("/middlenameJsp.jsp");
+        session.setAttribute("surname", req.getParameter("surname"));
+        resp.sendRedirect("/hello-fio");
     }
 }
