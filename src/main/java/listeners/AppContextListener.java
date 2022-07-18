@@ -1,7 +1,7 @@
 package listeners;
 
-import jakarta.servlet.ServletContextEvent;
-import jakarta.servlet.ServletContextListener;
+import javax.servlet.ServletContextEvent;
+import javax.servlet.ServletContextListener;
 
 import java.util.Date;
 import java.util.logging.Logger;
