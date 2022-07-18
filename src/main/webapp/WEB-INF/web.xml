@@ -44,8 +44,8 @@
   </servlet>
 
   <servlet>
-    <servlet-name>HelloFio</servlet-name>
-    <jsp-file>/helloFioJsp.jsp</jsp-file>
+    <servlet-name>HelloFioServlet</servlet-name>
+    <servlet-class>servlets.HelloFioServlet</servlet-class>
   </servlet>
 
   <servlet-mapping>
@@ -69,7 +69,7 @@
   </servlet-mapping>
 
   <servlet-mapping>
-    <servlet-name>HelloFio</servlet-name>
+    <servlet-name>HelloFioServlet</servlet-name>
     <url-pattern>/hello-fio</url-pattern>
   </servlet-mapping>
 
