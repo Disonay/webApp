@@ -1,11 +1,15 @@
 package repository;
 
+import repository.entities.User;
+import repository.entities.UsersEntity;
+
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 
-public interface Repository extends AutoCloseable {
-    User save(User user) throws SQLException;
-    User get(Integer id) throws SQLException;
-    List<User> getAll() throws SQLException;
+public interface Repository extends AutoCloseable{
+    void save(UsersEntity user) throws SQLException;
+    UsersEntity get(Integer id) throws SQLException;
+    List<UsersEntity> getAll() throws SQLException;
+    @Override
+    void close() throws Exception;
 }
