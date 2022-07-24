@@ -1,6 +1,6 @@
 <%@ page import="java.net.Socket" %>
 <%@ page import="java.io.*" %>
-<%@page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8" %>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%
     try (Socket socket = new Socket("info.cern.ch", 80)) {
         System.out.println("----------------------------------------------------------------------------------");

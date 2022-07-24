@@ -1,13 +1,15 @@
 package servlets;
 
-import jakarta.servlet.ServletException;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import repository.HibernatePostgresRepository;
 import repository.JDBCpostgresRepository;
 import repository.Repository;
-import repository.User;
+import repository.entities.User;
+import repository.entities.UsersEntity;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -24,11 +26,13 @@ public class HelloFioServlet extends HttpServlet {
         String middleName = (String) session.getAttribute("middleName");
 
         PrintWriter pw = resp.getWriter();
-        try (Repository repository = new JDBCpostgresRepository()) {
-            for (User user : repository.getAll()) {
+        try (Repository repository = new HibernatePostgresRepository()) {
+            for (UsersEntity user : repository.getAll()) {
                 pw.println("<p>" + user + "</p>");
             }
-            pw.println("<h1>Hello to new user: " + repository.save(new User(name, surname, middleName)) + "!</h1>");
+            UsersEntity newUser = new UsersEntity(name, surname, middleName);
+            repository.save(newUser);
+            pw.println("<h1>Hello to new user: " + newUser + "!</h1>");
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }

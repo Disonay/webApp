@@ -1,6 +1,4 @@
-package repository;
-
-import servlets.SurnameServlet;
+package repository.entities;
 
 public class User {
     final private Integer id;
