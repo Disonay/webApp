@@ -1,6 +1,7 @@
 package filters;
 
 import javax.servlet.*;
+import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpServletResponseWrapper;
@@ -8,13 +9,15 @@ import utils.CopyPrintWriter;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
 import java.util.logging.Logger;
 
+@WebFilter("/*")
 public class AppFilter implements Filter {
     private FilterConfig filterConfig;
     private static final Logger logger = Logger.getLogger(AppFilter.class.getName());
 
-    private void filterRequests(ServletRequest request) {
+    private void filterRequests(ServletRequest request) throws UnsupportedEncodingException {
         HttpServletRequest httpRequest = (HttpServletRequest) request;
         String sessionId = httpRequest.getSession().getId();
         String url = httpRequest.getRequestURI();

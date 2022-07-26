@@ -4,10 +4,7 @@
         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
     <session-factory>
-        <property name="connection.url">jdbc:postgresql://localhost:5432/traineedb</property> <!-- BD Mane -->
         <property name="connection.driver_class">org.postgresql.Driver</property> <!-- DB Driver -->
-        <property name="connection.username">sergei</property> <!-- DB User -->
-        <property name="connection.password">admin</property> <!-- DB Password -->
 
         <property name="dialect">org.hibernate.dialect.PostgreSQL10Dialect</property> <!-- DB Dialect -->
         <property name="hbm2ddl.auto">update</property> <!-- create / create-drop / update -->
@@ -15,6 +12,7 @@
         <property name="show_sql">true</property> <!-- Show SQL in console -->
         <property name="format_sql">true</property> <!-- Show SQL formatted -->
 
-        <mapping class="repository.entities.UsersEntity"/>
+        <mapping class="repository.entities.PersonEntity"/>
+        <mapping class="repository.entities.HouseEntity"/>
     </session-factory>
 </hibernate-configuration>

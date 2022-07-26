@@ -4,78 +4,14 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
-
-  <context-param>
-    <param-name>javax.servlet.jsp.jstl.fmt.request.charset</param-name>
-    <param-value>UTF-8</param-value>
-  </context-param>
-
-  <filter>
-    <filter-name>AppFilter</filter-name>
-    <filter-class>filters.AppFilter</filter-class>
-  </filter>
-
-  <filter-mapping>
-    <filter-name>AppFilter</filter-name>
-    <url-pattern>/*</url-pattern>
-  </filter-mapping>
-
-  <listener>
-    <listener-class>listeners.AppContextListener</listener-class>
-  </listener>
-
-  <listener>
-    <listener-class>listeners.AppSessionListener</listener-class>
-  </listener>
-
   <servlet>
-    <servlet-name>HelloServlet</servlet-name>
-    <servlet-class>servlets.HelloServlet</servlet-class>
-  </servlet>
-
-  <servlet>
-    <servlet-name>NameServlet</servlet-name>
-    <servlet-class>servlets.NameServlet</servlet-class>
-  </servlet>
-
-  <servlet>
-    <servlet-name>SurnameServlet</servlet-name>
-    <servlet-class>servlets.SurnameServlet</servlet-class>
-  </servlet>
-
-  <servlet>
-    <servlet-name>MiddleNameServlet</servlet-name>
-    <servlet-class>servlets.MiddleNameServlet</servlet-class>
-  </servlet>
-
-  <servlet>
-    <servlet-name>HelloFioServlet</servlet-name>
-    <servlet-class>servlets.HelloFioServlet</servlet-class>
+    <servlet-name>HelloName</servlet-name>
+    <jsp-file>/helloName.jsp</jsp-file>
   </servlet>
 
   <servlet-mapping>
-    <servlet-name>HelloServlet</servlet-name>
-    <url-pattern>/hello</url-pattern>
-  </servlet-mapping>
-
-  <servlet-mapping>
-    <servlet-name>NameServlet</servlet-name>
-    <url-pattern>/name</url-pattern>
-  </servlet-mapping>
-
-  <servlet-mapping>
-    <servlet-name>SurnameServlet</servlet-name>
-    <url-pattern>/surname</url-pattern>
-  </servlet-mapping>
-
-  <servlet-mapping>
-    <servlet-name>MiddleNameServlet</servlet-name>
-    <url-pattern>/middle-name</url-pattern>
-  </servlet-mapping>
-
-  <servlet-mapping>
-    <servlet-name>HelloFioServlet</servlet-name>
-    <url-pattern>/hello-fio</url-pattern>
+    <servlet-name>HelloName</servlet-name>
+    <url-pattern>/hello-name</url-pattern>
   </servlet-mapping>
 
 </web-app>

@@ -33,10 +33,15 @@
     <meta charset="UTF-8">
 </head>
 <body>
-<h1>Name: </h1>
-<form method="post" action="hello">
-    <input type="text" name="name">
-    <input type="submit" value="Enter">
-</form>
+    <nav>
+        <ul>
+            <li><a href="nameJsp.jsp">Hello FIO and database</a></li>
+            <li><a href="/hello">Static hello</a></li>
+            <li><a href="/hello-name">Dynamic hello</a></li>
+            <li><a href="houseJsp.jsp">Add house</a></li>
+            <li><a href="/person-house  ">Add person to house</a></li>
+            <li><a href="/resident">Show house residents</a></li>
+        </ul>
+    </nav>
 </body>
 </html>

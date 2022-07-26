@@ -1,5 +1,6 @@
 package listeners;
 
+import javax.servlet.annotation.WebListener;
 import javax.servlet.http.HttpSession;
 import javax.servlet.http.HttpSessionEvent;
 import javax.servlet.http.HttpSessionListener;
@@ -7,6 +8,7 @@ import javax.servlet.http.HttpSessionListener;
 import java.util.Date;
 import java.util.logging.Logger;
 
+@WebListener
 public class AppSessionListener implements HttpSessionListener {
     private static final Logger logger = Logger.getLogger(AppSessionListener.class.getName());
 
