@@ -7,9 +7,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import repository.entities.PersonEntity;
-import repository.person.HibernatePostgresRepositoryPerson;
-import repository.person.RepositoryPerson;
+import data.entities.PersonEntity;
+import data.dao.person.HibernatePostgresRepositoryPerson;
+import data.dao.person.RepositoryPerson;
 
 import java.io.IOException;
 import java.io.PrintWriter;

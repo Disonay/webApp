@@ -1,8 +1,8 @@
 package servlets;
 
-import repository.entities.HouseEntity;
-import repository.house.HibernatePostgresRepositoryHouse;
-import repository.house.RepositoryHouse;
+import data.entities.HouseEntity;
+import data.dao.house.HibernatePostgresRepositoryHouse;
+import data.dao.house.RepositoryHouse;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

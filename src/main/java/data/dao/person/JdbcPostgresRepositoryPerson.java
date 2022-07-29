@@ -1,11 +1,10 @@
-package repository.person;
+package data.dao.person;
 
-import repository.entities.PersonEntity;
+import data.entities.PersonEntity;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 import java.util.Properties;
 
 public class JdbcPostgresRepositoryPerson implements RepositoryPerson {
@@ -50,7 +49,7 @@ public class JdbcPostgresRepositoryPerson implements RepositoryPerson {
     }
 
     @Override
-    public PersonEntity get(Integer id) throws SQLException {
+    public PersonEntity findById(Integer id) throws SQLException {
         try (Statement statement = connection.createStatement()) {
             String query = "SELECT id, name, surname, middle_name FROM person WHERE id=" + id + " LIMIT 1";
             ResultSet resultSet = statement.executeQuery(query);

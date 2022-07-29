@@ -1,12 +1,12 @@
-package repository.person;
+package data.dao.person;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
-import repository.HibernateSessionFactoryUtil;
-import repository.entities.PersonEntity;
+import data.dao.HibernateSessionFactoryUtil;
+import data.entities.PersonEntity;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -30,7 +30,7 @@ public class HibernatePostgresRepositoryPerson implements RepositoryPerson {
     }
 
     @Override
-    public PersonEntity get(Integer id) throws SQLException {
+    public PersonEntity findById(Integer id) throws SQLException {
         try (Session session = sf.openSession()) {
             return session.get(PersonEntity.class, id);
         }

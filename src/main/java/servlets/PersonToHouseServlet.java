@@ -1,15 +1,11 @@
 package servlets;
 
-import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
-import repository.HibernateSessionFactoryUtil;
-import repository.entities.HouseEntity;
-import repository.entities.PersonEntity;
-import repository.house.HibernatePostgresRepositoryHouse;
-import repository.house.RepositoryHouse;
-import repository.person.HibernatePostgresRepositoryPerson;
-import repository.person.RepositoryPerson;
+import data.dao.HibernateSessionFactoryUtil;
+import data.dao.house.HibernatePostgresRepositoryHouse;
+import data.dao.house.RepositoryHouse;
+import data.dao.person.HibernatePostgresRepositoryPerson;
+import data.dao.person.RepositoryPerson;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -48,7 +44,7 @@ public class PersonToHouseServlet extends HttpServlet {
         try (RepositoryHouse repositoryHouse = new HibernatePostgresRepositoryHouse();
              RepositoryPerson repositoryPerson = new HibernatePostgresRepositoryPerson()) {
             for (Integer personId : personsId) {
-                repositoryHouse.addPersonToHouse(houseId, repositoryPerson.get(personId));
+                repositoryHouse.addPersonToHouse(houseId, repositoryPerson.findById(personId));
             }
         }
         catch (Exception e) {

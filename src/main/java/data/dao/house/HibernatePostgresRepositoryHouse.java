@@ -1,11 +1,11 @@
-package repository.house;
+package data.dao.house;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
-import repository.HibernateSessionFactoryUtil;
-import repository.entities.HouseEntity;
-import repository.entities.PersonEntity;
+import data.dao.HibernateSessionFactoryUtil;
+import data.entities.HouseEntity;
+import data.entities.PersonEntity;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
@@ -31,7 +31,7 @@ public class HibernatePostgresRepositoryHouse implements RepositoryHouse {
     }
 
     @Override
-    public HouseEntity get(Integer id) throws SQLException {
+    public HouseEntity findById(Integer id) throws SQLException {
         try (Session session = sf.openSession()) {
             return session.get(HouseEntity.class, id);
         }

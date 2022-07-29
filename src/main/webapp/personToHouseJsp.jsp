@@ -1,10 +1,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="org.hibernate.SessionFactory" %>
-<%@ page import="repository.HibernateSessionFactoryUtil" %>
+<%@ page import="data.dao.HibernateSessionFactoryUtil" %>
 <%@ page import="org.hibernate.Session" %>
 <%@ page import="javax.persistence.criteria.CriteriaBuilder" %>
 <%@ page import="javax.persistence.criteria.CriteriaQuery" %>
-<%@ page import="repository.entities.HouseEntity" %>
+<%@ page import="data.entities.HouseEntity" %>
 <%@ page import="java.util.List" %>
 <%@ page isELIgnored="false" %>
 <%--

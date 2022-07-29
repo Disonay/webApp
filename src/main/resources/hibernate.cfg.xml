@@ -12,7 +12,7 @@
         <property name="show_sql">true</property> <!-- Show SQL in console -->
         <property name="format_sql">true</property> <!-- Show SQL formatted -->
 
-        <mapping class="repository.entities.PersonEntity"/>
-        <mapping class="repository.entities.HouseEntity"/>
+        <mapping class="data.entities.PersonEntity"/>
+        <mapping class="data.entities.HouseEntity"/>
     </session-factory>
 </hibernate-configuration>

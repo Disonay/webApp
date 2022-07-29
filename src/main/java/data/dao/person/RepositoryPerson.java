@@ -1,15 +1,13 @@
-package repository.house;
+package data.dao.person;
 
-import repository.entities.HouseEntity;
-import repository.entities.PersonEntity;
-import servlets.PersonToHouseServlet;
+import data.entities.PersonEntity;
 
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Objects;
 import java.util.Properties;
 
-public interface RepositoryHouse extends AutoCloseable {
+public interface RepositoryPerson extends AutoCloseable {
     String USERNAME_PROPERTY = "USERNAME";
     String PASSWORD_PROPERTY = "PASSWORD";
     String URL_PROPERTY = "URL";
@@ -24,11 +22,9 @@ public interface RepositoryHouse extends AutoCloseable {
                 Objects.requireNonNull(System.getProperty(URL_PROPERTY), "Url property not set."));
         return info;
     }
-    HouseEntity save(HouseEntity house) throws SQLException;
-    HouseEntity get(Integer id) throws SQLException;
-    List<HouseEntity> getAll() throws SQLException;
-
-    void addPersonToHouse(int houseId, PersonEntity person);
+    PersonEntity save(PersonEntity person) throws SQLException;
+    PersonEntity findById(Integer id) throws SQLException;
+    List<PersonEntity> getAll() throws SQLException;
     @Override
     default void close() throws Exception {};
 }
