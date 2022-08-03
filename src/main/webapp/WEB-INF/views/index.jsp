@@ -31,16 +31,18 @@
 <html>
 <head>
     <meta charset="UTF-8">
+    <title>Welcome</title>
 </head>
 <body>
     <nav>
         <ul>
-            <li><a href="nameJsp.jsp">Hello FIO and database</a></li>
-            <li><a href="/hello">Static hello</a></li>
-            <li><a href="/hello-name">Dynamic hello</a></li>
-            <li><a href="houseJsp.jsp">Add house</a></li>
-            <li><a href="/person-house  ">Add person to house</a></li>
-            <li><a href="/resident">Show house residents</a></li>
+            <li><a href="/name">Hello FIO and database</a></li>
+            <li><a href="/persons">All persons</a></li>
+            <li><a href="/default-hello">Static hello</a></li>
+            <li><a href="/hello">Dynamic hello</a></li>
+            <li><a href="/house">Add house</a></li>
+            <li><a href="/person-house">Add person to house</a></li>
+            <li><a href="/residents">Show house residents</a></li>
         </ul>
     </nav>
 </body>

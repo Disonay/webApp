@@ -1,26 +1,18 @@
 package data.dao.person;
 
 import data.entities.PersonEntity;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Properties;
 
-public class JdbcPostgresRepositoryPerson implements RepositoryPerson {
+@Component
+public class JdbcPersonDAO implements PersonDAO {
     private final Connection connection;
-    private final Properties info;
-
-    public JdbcPostgresRepositoryPerson() throws SQLException {
-        try {
-            Class.forName("org.postgresql.Driver");
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-
-        this.info = loadProperties();
-        String URL = (String) info.get("url");
-        connection = DriverManager.getConnection(URL, info);
+    public JdbcPersonDAO(@Autowired Connection connection) throws SQLException {
+        this.connection = connection;
     }
 
     private PersonEntity getPersonFromResultSet(ResultSet resultSet) throws SQLException {

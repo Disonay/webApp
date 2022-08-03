@@ -1,21 +1,23 @@
 package data.dao.person;
 
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
+import data.entities.PersonEntity;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
-import data.dao.HibernateSessionFactoryUtil;
-import data.entities.PersonEntity;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
 import java.sql.SQLException;
 import java.util.List;
 
-public class HibernatePostgresRepositoryPerson implements RepositoryPerson {
+@Repository
+public class HibernatePersonDAO implements PersonDAO {
     private final SessionFactory sf;
 
-    public HibernatePostgresRepositoryPerson() {
-        sf = HibernateSessionFactoryUtil.getSessionFactory();
+    public HibernatePersonDAO(@Autowired SessionFactory sf) {
+        this.sf = sf;
     }
 
     @Override
@@ -48,7 +50,7 @@ public class HibernatePostgresRepositoryPerson implements RepositoryPerson {
     }
 
     @Override
-    public void close()  {
+    public void close() {
 
     }
 }

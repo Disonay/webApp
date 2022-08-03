@@ -1,18 +1,18 @@
 <%--
   Created by IntelliJ IDEA.
   User: Sergei
-  Date: 25.07.2022
-  Time: 01:09
+  Date: 12.07.2022
+  Time: 01:54
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <html>
 <head>
-    <title>Dynamic hello</title>
+    <title>Name</title>
 </head>
 <body>
     <h1>Name: </h1>
-    <form method="post" action="hello">
+    <form method="post" action="/name">
         <input type="text" name="name">
         <input type="submit" value="Enter">
     </form>

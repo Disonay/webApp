@@ -12,7 +12,7 @@
 </head>
 <body>
     <h1>Middle Name: </h1>
-    <form method="post" action="middle-name">
+    <form method="post" action="/middle-name">
         <input type="text" name="middleName">
         <input type="submit" value="Enter">
     </form>

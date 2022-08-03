@@ -1,22 +1,25 @@
 package data.dao.house;
 
+import data.entities.HouseEntity;
+import data.entities.PersonEntity;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
-import data.dao.HibernateSessionFactoryUtil;
-import data.entities.HouseEntity;
-import data.entities.PersonEntity;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import java.sql.SQLException;
 import java.util.List;
 
-public class HibernatePostgresRepositoryHouse implements RepositoryHouse {
+@Repository
+public class HibernateHouseDAO implements HouseDAO {
     private final SessionFactory sf;
 
-    public HibernatePostgresRepositoryHouse() {
-        sf = HibernateSessionFactoryUtil.getSessionFactory();
+    public HibernateHouseDAO(@Autowired SessionFactory sf) {
+        this.sf = sf;
     }
 
     @Override
