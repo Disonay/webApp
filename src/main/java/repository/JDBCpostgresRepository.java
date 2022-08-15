@@ -1,6 +1,5 @@
 package repository;
 
-import repository.entities.User;
 import repository.entities.UsersEntity;
 
 import java.sql.*;
