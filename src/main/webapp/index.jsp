@@ -31,6 +31,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
+    <title>Index page</title>
 </head>
 <body>
 <h1>Name: </h1>
