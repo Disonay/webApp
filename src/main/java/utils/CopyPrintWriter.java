@@ -5,7 +5,7 @@ import java.io.Writer;
 
 public class CopyPrintWriter extends PrintWriter {
 
-    private StringBuilder copy = new StringBuilder();
+    private final StringBuilder copy = new StringBuilder();
 
     public CopyPrintWriter(Writer writer) {
         super(writer);
