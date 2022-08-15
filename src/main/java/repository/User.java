@@ -1,7 +1,5 @@
 package repository;
 
-import servlets.SurnameServlet;
-
 public class User {
     final private Integer id;
     final private String name;
