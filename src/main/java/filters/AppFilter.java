@@ -1,9 +1,9 @@
 package filters;
 
-import jakarta.servlet.*;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpServletResponseWrapper;
+import javax.servlet.*;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpServletResponseWrapper;
 import utils.CopyPrintWriter;
 
 import java.io.IOException;
@@ -34,6 +34,11 @@ public class AppFilter implements Filter {
             }
         });
         logger.info(writer.getCopy());
+    }
+
+    @Override
+    public void destroy() {
+
     }
 
     @Override

@@ -30,6 +30,7 @@
 %>
 <html>
 <head>
+    <title>Index page</title>
     <meta charset="UTF-8">
 </head>
 <body>
