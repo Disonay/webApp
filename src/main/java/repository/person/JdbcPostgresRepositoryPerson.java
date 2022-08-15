@@ -5,7 +5,6 @@ import repository.entities.PersonEntity;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 import java.util.Properties;
 
 public class JdbcPostgresRepositoryPerson implements RepositoryPerson {

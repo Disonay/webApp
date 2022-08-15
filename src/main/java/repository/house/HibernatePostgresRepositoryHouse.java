@@ -9,7 +9,6 @@ import repository.entities.PersonEntity;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
-import java.sql.SQLException;
 import java.util.List;
 
 public class HibernatePostgresRepositoryHouse implements RepositoryHouse {
@@ -20,7 +19,7 @@ public class HibernatePostgresRepositoryHouse implements RepositoryHouse {
     }
 
     @Override
-    public HouseEntity save(HouseEntity house) throws SQLException {
+    public HouseEntity save(HouseEntity house) {
         try (Session session = sf.openSession()) {
             Transaction transaction = session.getTransaction();
             transaction.begin();
@@ -31,14 +30,14 @@ public class HibernatePostgresRepositoryHouse implements RepositoryHouse {
     }
 
     @Override
-    public HouseEntity get(Integer id) throws SQLException {
+    public HouseEntity get(Integer id) {
         try (Session session = sf.openSession()) {
             return session.get(HouseEntity.class, id);
         }
     }
 
     @Override
-    public List<HouseEntity> getAll() throws SQLException {
+    public List<HouseEntity> getAll() {
         try (Session session1 = sf.openSession()) {
             CriteriaBuilder builder = session1.getCriteriaBuilder();
             CriteriaQuery<HouseEntity> criteria = builder.createQuery(HouseEntity.class);
@@ -60,10 +59,5 @@ public class HibernatePostgresRepositoryHouse implements RepositoryHouse {
 
             transaction.commit();
         }
-    }
-
-    @Override
-    public void close() throws Exception {
-
     }
 }

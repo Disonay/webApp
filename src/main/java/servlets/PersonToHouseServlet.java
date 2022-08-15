@@ -1,11 +1,7 @@
 package servlets;
 
-import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
 import repository.HibernateSessionFactoryUtil;
-import repository.entities.HouseEntity;
-import repository.entities.PersonEntity;
 import repository.house.HibernatePostgresRepositoryHouse;
 import repository.house.RepositoryHouse;
 import repository.person.HibernatePostgresRepositoryPerson;
@@ -40,10 +36,9 @@ public class PersonToHouseServlet extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) {
         int houseId = Integer.parseInt(req.getParameter("house"));
         List<Integer> personsId = Arrays.stream(req.getParameterValues("persons")).map(Integer::parseInt).toList();
-        SessionFactory sf = HibernateSessionFactoryUtil.getSessionFactory();
 
         try (RepositoryHouse repositoryHouse = new HibernatePostgresRepositoryHouse();
              RepositoryPerson repositoryPerson = new HibernatePostgresRepositoryPerson()) {

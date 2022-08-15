@@ -1,14 +1,13 @@
 package repository.person;
 
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import repository.HibernateSessionFactoryUtil;
 import repository.entities.PersonEntity;
 
-import java.sql.SQLException;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
 import java.util.List;
 
 public class HibernatePostgresRepositoryPerson implements RepositoryPerson {
@@ -19,7 +18,7 @@ public class HibernatePostgresRepositoryPerson implements RepositoryPerson {
     }
 
     @Override
-    public PersonEntity save(PersonEntity person) throws SQLException {
+    public PersonEntity save(PersonEntity person) {
         try (Session session = sf.openSession()) {
             Transaction transaction = session.getTransaction();
             transaction.begin();
@@ -30,14 +29,14 @@ public class HibernatePostgresRepositoryPerson implements RepositoryPerson {
     }
 
     @Override
-    public PersonEntity get(Integer id) throws SQLException {
+    public PersonEntity get(Integer id) {
         try (Session session = sf.openSession()) {
             return session.get(PersonEntity.class, id);
         }
     }
 
     @Override
-    public List<PersonEntity> getAll() throws SQLException {
+    public List<PersonEntity> getAll() {
         try (Session session = sf.openSession()) {
             CriteriaBuilder builder = session.getCriteriaBuilder();
             CriteriaQuery<PersonEntity> criteria = builder.createQuery(PersonEntity.class);
