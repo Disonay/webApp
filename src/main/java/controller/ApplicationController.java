@@ -44,8 +44,7 @@ public class ApplicationController {
     }
 
     @RequestMapping(method = RequestMethod.POST, value = "/hello")
-    public String dynamicHello(Model model, @ModelAttribute("name") String name) {
-        model.addAttribute("name", name);
+    public String dynamicHello(@ModelAttribute("name") String name) {
         return "helloName";
     }
 
@@ -55,7 +54,7 @@ public class ApplicationController {
     }
 
     @RequestMapping(method = RequestMethod.POST, value = "/name")
-    public String saveName(@ModelAttribute("name") String name, HttpSession httpSession, Model model) {
+    public String saveName(@ModelAttribute("name") String name, HttpSession httpSession) {
         httpSession.setAttribute("name", name);
         return "middlename";
     }
@@ -111,8 +110,7 @@ public class ApplicationController {
     }
 
     @RequestMapping(method = RequestMethod.POST, value = "/house")
-    public String addHouse(Model model,
-                           @ModelAttribute("city") String city,
+    public String addHouse(@ModelAttribute("city") String city,
                            @ModelAttribute("street") String street,
                            @ModelAttribute("number") int number) throws SQLException {
         houseDAO.save(new HouseEntity(city, street, number));
@@ -134,8 +132,7 @@ public class ApplicationController {
     }
 
     @RequestMapping(method = RequestMethod.POST, value = "/person-house")
-    public String addPersonToHouse(Model model,
-                                   @ModelAttribute("house") int houseId,
+    public String addPersonToHouse(@ModelAttribute("house") int houseId,
                                    @ModelAttribute("persons") List<Integer> personsId) throws SQLException {
         for (Integer personId : personsId) {
             houseDAO.addPersonToHouse(houseId, personDAO.findById(personId));

@@ -6,14 +6,13 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Component;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
-import java.sql.SQLException;
 import java.util.List;
 
-@Repository
+@Component
 public class HibernateHouseDAO implements HouseDAO {
     private final SessionFactory sf;
 
@@ -22,25 +21,25 @@ public class HibernateHouseDAO implements HouseDAO {
     }
 
     @Override
-    public HouseEntity save(HouseEntity house) throws SQLException {
+    public HouseEntity save(HouseEntity house)  {
         try (Session session = sf.openSession()) {
             Transaction transaction = session.getTransaction();
             transaction.begin();
-            Integer id = (Integer) session.save(house);
+            session.save(house);
             transaction.commit();
-            return new HouseEntity(id, house.getCity(), house.getStreet(), house.getNumber());
+            return house;
         }
     }
 
     @Override
-    public HouseEntity findById(Integer id) throws SQLException {
+    public HouseEntity findById(Integer id)  {
         try (Session session = sf.openSession()) {
             return session.get(HouseEntity.class, id);
         }
     }
 
     @Override
-    public List<HouseEntity> getAll() throws SQLException {
+    public List<HouseEntity> getAll() {
         try (Session session1 = sf.openSession()) {
             CriteriaBuilder builder = session1.getCriteriaBuilder();
             CriteriaQuery<HouseEntity> criteria = builder.createQuery(HouseEntity.class);
